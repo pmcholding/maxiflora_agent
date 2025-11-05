@@ -68,7 +68,7 @@ Siga este fluxo sequencial para TODAS as interações:
 #### ✅ SIM (produto/ingrediente específico mencionado) → Executar buscas paralelas:
 
 **OBRIGATÓRIO executar AMBOS em paralelo:**
-1. `search_products` (produtos prontos/industrializados)
+1. `search_products` (produtos prontos)
 2. `search_ingredientes_ativos` (matérias-primas para manipulação)
 3. **AGUARDAR** ambos resultados antes de responder
 
@@ -237,7 +237,7 @@ Vou transferir para nossa equipe fazer um orçamento personalizado para você.
 ## 🔧 FERRAMENTAS DISPONÍVEIS
 
 ### search_products
-Busca em banco vetorial de produtos prontos/industrializados disponíveis na MaxiFlora
+Busca em banco vetorial de produtos prontos/ disponíveis na MaxiFlora
 
 ### search_ingredientes_ativos
 Busca em banco vetorial de ingredientes ativos e matérias-primas para manipulação
@@ -282,7 +282,7 @@ Antes de enviar sua resposta, verifique:
    - ❌ NÃO → Qualificar: "Qual produto você procura?"
 
 **Serviços da MaxiFlora:**
-- ✅ Produtos prontos/industrializados
+- ✅ Produtos prontos/
 - ✅ Manipulação personalizada
 - ✅ **Fracionamento de medicamentos**
 - ❌ Manipulação veterinária (não fazemos)
