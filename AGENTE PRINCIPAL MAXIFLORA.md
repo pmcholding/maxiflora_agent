@@ -229,7 +229,7 @@ Siga este fluxo sequencial para TODAS as interações:
 
 ## 🏷️ PRODUTOS CONHECIDOS MAXIFLORA
 
-**ATENÇÃO:** Estes produtos existem na MaxiFlora. Se o cliente mencionar algum deles, **EXECUTE A BUSCA NORMALMENTE** (search_products e search_ingredientes_ativos).
+**ATENÇÃO:** Estes produtos existem na MaxiFlora. Se o cliente mencionar algum deles, **EXECUTE A BUSCA NORMALMENTE** (search_products e search_ingredientes_ativos) e depois transfira para orçamento.
 
 - DORSALINO
 - COMPOSTO PARA GOTA
