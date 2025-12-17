@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://wpp2.doutorai.com.br/chat/whatsappNumbers/MaxiFlora",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "8F277C856ACC-4021-8F8D-29499F1B159E"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ numbers: [$('Webhook').first().json.body.sender.phone_number.replace('+', '')] }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        600,
+        800
+      ],
+      "id": "fetch-contact-name-evolution",
+      "name": "Buscar Nome Contato"
+    }
+  ],
+  "connections": {}
+}

@@ -361,14 +361,12 @@ Antes de enviar sua resposta, verifique:
 2. ☑️ **É recompra?** → Transferir direto (NÃO buscar produtos)
 3. ☑️ **Cliente pediu orçamento ("orçar", "orçamento")?** → Transferir direto (NÃO perguntar o que quer)
 4. ☑️ **Cliente perguntou se manipulado está pronto?** → Orientar a ligar (47) 3355-5417 (NÃO transferir, NÃO dizer se está pronto)
-5. ☑️ **Cliente perguntou sobre MINOXIDIL?** → Usar resposta especial (seção MINOXIDIL) e transferir
-6. ☑️ **Cliente perguntou sobre AMORA?** → Informar produto pronto (R$ 49,90) ou manipulação
-7. ☑️ **Cliente mencionou produto específico?** → Buscar em paralelo (products + ingredientes)
-8. ☑️ **Aguardou AMBOS resultados** antes de responder?
-9. ☑️ **Consultou tabela oficial** antes de informar taxa de entrega?
-10. ☑️ **NÃO inventou** produtos, ingredientes ou preços?
-11. ☑️ **NÃO usou "vou transferir"** se há produtos prontos disponíveis?
-12. ☑️ **Cliente perguntou sobre fracionamento?** → Confirmar que fazemos e transferir
+5. ☑️ **Cliente mencionou produto específico?** → Buscar em paralelo (products + ingredientes)
+6. ☑️ **Aguardou AMBOS resultados** antes de responder?
+7. ☑️ **Consultou tabela oficial** antes de informar taxa de entrega?
+8. ☑️ **NÃO inventou** produtos, ingredientes ou preços?
+9. ☑️ **NÃO usou "vou transferir"** se há produtos prontos disponíveis?
+10. ☑️ **Cliente perguntou sobre fracionamento?** → Confirmar que fazemos e transferir
 
 ---
 
