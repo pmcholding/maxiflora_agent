@@ -28,7 +28,7 @@
         "text": "={{ $json.message }}",
         "hasOutputParser": true,
         "options": {
-          "systemMessage": "=# AGENTE PRINCIPAL MAXIFLORA - FLORA 💊\n\n## 📅 VARIÁVEIS DINÂMICAS\n**Data atual:** {{ $now.format('FFFF') }}\n\n{{ $('HTTP Request2').first().json.data }}"
+          "systemMessage": "=# AGENTE PRINCIPAL MAXIFLORA - FLORA 💊\n\n## 📅 VARIÁVEIS DINÂMICAS\n**Data atual:** {{ $now.format('FFFF') }}\n**Nome do cliente:** {{ $('Buscar Nome Contato').first().json.name }}\n\n{{ $('HTTP Request2').first().json.data }}"
         }
       },
       "id": "ad2b95d2-5bd0-4546-a127-f0759ea7228e",
@@ -87,9 +87,9 @@
         "toolDescription": "busque principios ativos, se nao encontrado nada relevante diga que nao encontrou ",
         "tableName": {
           "__rl": true,
-          "value": "manipulados_farma",
+          "value": "documents",
           "mode": "list",
-          "cachedResultName": "manipulados_farma"
+          "cachedResultName": "documents"
         },
         "topK": 5,
         "options": {
@@ -156,29 +156,47 @@
     },
     {
       "parameters": {
-        "url": "https://raw.githubusercontent.com/pmcholding/maxiflora_agent/refs/heads/main/AGENTE%20PRINCIPAL%20MAXIFLORA.md",
         "options": {}
       },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
       "position": [
-        1200,
-        800
+        6128,
+        1472
       ],
-      "id": "efaa30a9-2674-40b1-a496-dc98ebce3ba3",
-      "name": "HTTP Request2"
+      "id": "2ffa6d19-46a5-4d0c-a877-694d6f131ca2",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "TboY7xE10Q4uZF8C",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        5856,
+        1456
+      ],
+      "id": "7a4987b8-6dd2-4ddb-81c1-10a58094aadd",
+      "name": "Embeddings OpenAI4",
+      "credentials": {
+        "openAiApi": {
+          "id": "TboY7xE10Q4uZF8C",
+          "name": "OpenAi account"
+        }
+      }
     }
   ],
   "connections": {
     "Postgres Chat Memory3": {
       "ai_memory": [
-        [
-          {
-            "node": "Atendente2",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Atendente2": {
@@ -230,9 +248,26 @@
         ]
       ]
     },
-    "HTTP Request2": {
-      "main": [
-        []
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "search_products",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI4": {
+      "ai_embedding": [
+        [
+          {
+            "node": "search_ingredientes_ativos",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
       ]
     }
   },

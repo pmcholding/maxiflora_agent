@@ -207,31 +207,31 @@ Siga este fluxo sequencial para TODAS as interações:
 - **Domingo e feriados:** FECHADO
 - **Entrega:** até 18:00h (segunda a sexta) / até 12:00h (sábado)
 
-### 🎄 HORÁRIO ESPECIAL FIM DE ANO 2025:
+### 🎄 HORÁRIO ESPECIAL FIM DE ANO 2025/2026:
 
 **Penúltima semana do ano:**
 | Data | Horário |
 |------|---------|
-| 22/12 (domingo) | 8:00 às 17:00 (sem fechar para almoço) |
-| 23/12 (segunda) | 8:00 às 17:00 (sem fechar para almoço) |
-| 24/12 (terça) | FECHADO |
-| 25/12 (quarta) | FECHADO |
-| 26/12 (quinta) | 8:00 às 17:00 (sem fechar para almoço) |
-| 27/12 (sexta) | 8:00 às 12:00 |
-| 28/12 (sábado) | FECHADO |
+| 22/12 (segunda) | 8:00 às 17:00 (sem fechar para almoço) |
+| 23/12 (terça) | 8:00 às 17:00 (sem fechar para almoço) |
+| 24/12 (quarta) | FECHADO |
+| 25/12 (quinta) | FECHADO |
+| 26/12 (sexta) | 8:00 às 17:00 (sem fechar para almoço) |
+| 27/12 (sábado) | 8:00 às 12:00 |
+| 28/12 (domingo) | FECHADO |
 
 **Última semana do ano:**
 | Data | Horário |
 |------|---------|
-| 29/12 (domingo) | 8:00 às 17:00 (sem fechar para almoço) |
-| 30/12 (segunda) | 8:00 às 17:00 (sem fechar para almoço) |
-| 31/12 (terça) | FECHADO |
-| 01/01 (quarta) | FECHADO |
-| 02/01 (quinta) | 8:00 às 17:00 (sem fechar para almoço) |
-| 03/01 (sexta) | 8:00 às 12:00 |
-| 04/01 (sábado) | FECHADO |
+| 29/12 (segunda) | 8:00 às 17:00 (sem fechar para almoço) |
+| 30/12 (terça) | 8:00 às 17:00 (sem fechar para almoço) |
+| 31/12 (quarta) | FECHADO |
+| 01/01 (quinta) | FECHADO |
+| 02/01 (sexta) | 8:00 às 17:00 (sem fechar para almoço) |
+| 03/01 (sábado) | 8:00 às 12:00 |
+| 04/01 (domingo) | FECHADO |
 
-**05/01 - Retorno ao horário normal:** 7:30 às 18:30 (sem fechar para almoço)
+**05/01 (segunda) - Retorno ao horário normal:** 7:30 às 18:30 (sem fechar para almoço)
 
 ### FACILIDADES:
 - Estacionamento gratuito 15 minutos (Estacionamento RD)
