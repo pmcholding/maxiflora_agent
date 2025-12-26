@@ -1,0 +1,8 @@
+# Chaves de API
+.env
+.env.local
+.env.*.local
+
+# Arquivos temporários
+/tmp/
+*.tmp
