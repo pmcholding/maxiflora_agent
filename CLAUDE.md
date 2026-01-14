@@ -131,28 +131,39 @@ SELECT id, content FROM documents WHERE content ILIKE '%termo%';
 
 ### Gerar Embedding (Obrigatório para Busca Vetorial)
 
-Após inserir um registro, é necessário gerar o embedding para que a busca vetorial funcione. Use curl para chamar a API OpenAI:
+Após inserir ou atualizar um registro, gere o embedding usando a Edge Function:
 
 ```bash
-# 1. Gerar embedding
-curl -s https://api.openai.com/v1/embeddings \
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
+curl -X POST "https://pevhcqefgzczilutmcup.supabase.co/functions/v1/generate-embedding" \
   -H "Content-Type: application/json" \
-  -d '{"input": "CONTEUDO_DO_REGISTRO", "model": "text-embedding-ada-002"}' \
-  | jq -c '.data[0].embedding' > /tmp/embedding.json
-
-# 2. Criar payload
-jq -c '{embedding: .}' /tmp/embedding.json > /tmp/payload.json
-
-# 3. Atualizar no Supabase
-curl -X PATCH "https://pevhcqefgzczilutmcup.supabase.co/rest/v1/documents?id=eq.ID_DO_REGISTRO" \
-  -H "apikey: $SUPABASE_SERVICE_KEY" \
-  -H "Authorization: Bearer $SUPABASE_SERVICE_KEY" \
-  -H "Content-Type: application/json" \
-  -d @/tmp/payload.json
+  -d '{"id": ID_DO_REGISTRO}'
 ```
+
+**Exemplo completo - Inserir produto e gerar embedding:**
+
+```bash
+# 1. Inserir produto (via MCP ou SQL)
+INSERT INTO documents (content, metadata) VALUES (
+  'Título: PRODUTO | Preço: XX.XX | Descricao: ...',
+  '{"ecommerce": "irrobacsv", "source": "blob", "blobType": "text/csv"}'::jsonb
+) RETURNING id;
+
+# 2. Gerar embedding (substitua ID pelo id retornado)
+curl -X POST "https://pevhcqefgzczilutmcup.supabase.co/functions/v1/generate-embedding" \
+  -H "Content-Type: application/json" \
+  -d '{"id": ID}'
+```
+
+### Edge Function: generate-embedding
+
+A função `generate-embedding` está deployada no Supabase e automatiza a geração de embeddings:
+- Busca o conteúdo do documento pelo ID
+- Chama a API OpenAI para gerar o embedding
+- Atualiza o campo `embedding` no banco
+
+**Secrets configuradas no Supabase:**
+- `OPENAI_API_KEY`: Chave da API OpenAI
 
 ### Credenciais Necessárias
 
-- **OPENAI_API_KEY**: Chave da API OpenAI para gerar embeddings
-- **SUPABASE_SERVICE_KEY**: Service role key do Supabase (Settings > API > service_role)
+- **OPENAI_API_KEY**: Chave da API OpenAI (configurada como secret no Supabase Edge Functions)
