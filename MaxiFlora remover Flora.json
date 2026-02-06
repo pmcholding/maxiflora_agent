@@ -1,0 +1,94 @@
+{
+  "name": "MaxiFlora remover Flora",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "888af65a-74dd-4c22-8297-2bfec01c2a56",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE public.conversations\nSET assignee_id = NULL,\n    team_id     = NULL\nWHERE account_id = 27\n  AND (assignee_id IS NOT NULL OR team_id IS NOT NULL)\n  AND updated_at < (CURRENT_TIMESTAMP - INTERVAL '3 days')",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        224,
+        0
+      ],
+      "id": "fb2398d4-9668-48dc-b073-8356c27a47d3",
+      "name": "Execute a SQL query",
+      "credentials": {
+        "postgres": {
+          "id": "bmC45JpdFCXrM2m0",
+          "name": "draidbprod"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "DELETE FROM n8n_chat_histories_maxiflora\nWHERE created_at < NOW() - INTERVAL '3 days'",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        224,
+        200
+      ],
+      "id": "c1d2e3f4-5678-90ab-cdef-123456789abc",
+      "name": "Limpar historico chat Flora",
+      "credentials": {
+        "postgres": {
+          "id": "bmC45JpdFCXrM2m0",
+          "name": "draidbprod"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Limpar historico chat Flora",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a6e3c455-980e-4b0b-87e1-f2abfd1c2808",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0dff2809c326d67264ac89b11c62a81c0e33c81a110b2979fd152608e157400d"
+  },
+  "id": "pmvCkmWfLtyf84zp",
+  "tags": []
+}
